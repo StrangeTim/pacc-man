@@ -1,38 +1,39 @@
 source 'https://rubygems.org'
 
-gem 'rails'
-gem 'pg'
-gem 'sass-rails'
+gem 'bcrypt'
 gem 'bootstrap-sass'
 gem 'bootstrap_form'
-gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
-gem 'jquery-rails'
-gem 'turbolinks'
-gem 'jquery-turbolinks'
-gem 'bcrypt'
-gem 'pry'
-gem 'pry-rails'
-gem "letter_opener"
 gem 'devise'
+gem 'dotenv-rails', :groups => [:development, :test]
+gem 'jquery-rails'
+gem 'jquery-turbolinks'
+gem "letter_opener"
+gem 'pry'
+gem 'pg'
+gem 'pry-rails'
 gem 'paperclip'
 gem 'poltergeist'
+gem 'rails'
+gem 'sass-rails'
+gem 'turbolinks'
+gem 'uglifier', '>= 1.3.0'
 
 group :development do
   gem 'byebug'
-  gem 'web-console', '~> 2.0'
-  gem 'spring'
   gem 'quiet_assets'
+  gem 'spring'
+  gem 'web-console', '~> 2.0'
 end
 
 group :test, :development do
-  gem 'rspec-rails'
   gem 'launchy'
+  gem 'rspec-rails'
 end
 
 group :test do
-  gem 'shoulda-matchers'
   gem 'capybara'
   gem 'factory_girl_rails'
+  gem 'shoulda-matchers'
   gem 'simplecov', require: false
 end
