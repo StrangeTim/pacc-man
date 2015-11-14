@@ -1,16 +1,14 @@
 source 'https://rubygems.org'
 
-gem 'bcrypt'
 gem 'bootstrap-sass'
 gem 'bootstrap_form'
-gem 'coffee-rails', '~> 4.1.0'
+gem 'declarative_authorization', :git => 'git://github.com/stffn/declarative_authorization.git'
 gem 'devise'
 gem 'dotenv-rails', :groups => [:development, :test]
 gem 'jquery-rails'
 gem 'jquery-turbolinks'
-gem "letter_opener"
-gem 'pry'
 gem 'pg'
+gem 'pry'
 gem 'pry-rails'
 gem 'paperclip'
 gem 'poltergeist'
@@ -20,7 +18,6 @@ gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 
 group :development do
-  gem 'byebug'
   gem 'quiet_assets'
   gem 'spring'
   gem 'web-console', '~> 2.0'
