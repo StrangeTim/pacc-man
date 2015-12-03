@@ -11,15 +11,71 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150927214227) do
+ActiveRecord::Schema.define(version: 20151126194857) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "fabrics", force: :cascade do |t|
+    t.string "name"
+  end
+
+  create_table "fabrics_projects", id: false, force: :cascade do |t|
+    t.integer "project_id"
+    t.integer "fabric_id"
+  end
+
+  create_table "notes", force: :cascade do |t|
+    t.integer "project_id"
+    t.string  "name"
+  end
+
+  create_table "patterns", force: :cascade do |t|
+    t.string "name"
+  end
+
+  create_table "patterns_projects", id: false, force: :cascade do |t|
+    t.integer "project_id"
+    t.integer "pattern_id"
+  end
+
+  create_table "pictures", force: :cascade do |t|
+    t.integer "project_id"
+    t.string  "name"
+  end
+
+  create_table "project_parts", force: :cascade do |t|
+    t.integer "project_id"
+    t.string  "name"
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.integer "user_id"
+    t.string  "name"
+    t.binary  "description"
+    t.boolean "future",      default: false
+    t.boolean "finished",    default: false
+    t.boolean "private",     default: false
+    t.float   "percentage",  default: 0.0
+    t.date    "due_date"
+    t.date    "start_date",  default: '2015-11-27'
+    t.date    "finish_date"
+  end
+
+  create_table "researches", force: :cascade do |t|
+    t.integer "project_id"
+    t.string  "name"
+  end
 
   create_table "roles", force: :cascade do |t|
     t.string   "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "supplies", force: :cascade do |t|
+    t.integer "project_id"
+    t.string  "name"
   end
 
   create_table "users", force: :cascade do |t|
