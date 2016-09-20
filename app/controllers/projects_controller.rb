@@ -13,7 +13,7 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    @current_project =
+    @current_project = Project.find(params[:id])
     @project_parts = @current_project.project_parts
     @display_picture = @current_project.display_picture
     @progress = @current_project.percentage

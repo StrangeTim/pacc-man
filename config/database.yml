@@ -2,10 +2,13 @@
 default: &default
   adapter: postgresql
   encoding: unicode
+  hostname: 127.0.0.1
   host: localhost
+  post: 5432
   pool: 5
   username: postgres
-
+  password: <%= ENV['POSTPASS'] %>
+  
 development:
   <<: *default
   database: pacc_development

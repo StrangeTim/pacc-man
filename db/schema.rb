@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 20151126194857) do
     t.boolean "private",     default: false
     t.float   "percentage",  default: 0.0
     t.date    "due_date"
-    t.date    "start_date",  default: '2015-11-27'
+    t.date    "start_date",  default: '2016-09-18'
     t.date    "finish_date"
   end
 

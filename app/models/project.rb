@@ -5,6 +5,6 @@ class Project < ActiveRecord::Base
   has_and_belongs_to_many :patterns
   has_many :supplies
   has_many :project_parts
-  has_and_belongs_to_many :fabrics
+  has_and_belongs_to_many :materials
   has_many :notes
 end
